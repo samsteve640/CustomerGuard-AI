@@ -8,37 +8,48 @@ st.markdown("""
 <style>
 [data-testid="stAppViewContainer"] {background:#f6f8fc;}
 [data-testid="stSidebar"] {background:#0b1830;}
-/* Sidebar background */
-[data-testid="stSidebar"] {
-    background: #0b1830;
-}
-
-/* Sidebar headings and normal text */
+/* Keep sidebar labels light, but form values dark and readable */
 [data-testid="stSidebar"] h1,
 [data-testid="stSidebar"] h2,
 [data-testid="stSidebar"] h3,
 [data-testid="stSidebar"] p,
-[data-testid="stSidebar"] label {
-    color: #f8fafc !important;
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+    color:#f8fafc !important;
 }
-
-/* Text inside input/select boxes */
 [data-testid="stSidebar"] input {
-    color: #111827 !important;
+    color:#111827 !important;
+    background:#ffffff !important;
 }
-
-/* Selected value inside dropdown */
-[data-testid="stSidebar"] [data-baseweb="select"] * {
-    color: #111827 !important;
+[data-testid="stSidebar"] [data-baseweb="select"] > div {
+    background:#ffffff !important;
 }
-
-/* Dropdown options */
+[data-testid="stSidebar"] [data-baseweb="select"] span,
+[data-testid="stSidebar"] [data-baseweb="select"] div[aria-selected="true"] {
+    color:#111827 !important;
+}
+[data-baseweb="popover"],
 [data-baseweb="popover"] * {
-    color: #111827 !important;
+    color:#111827 !important;
+}
+[data-baseweb="menu"] {
+    background:#ffffff !important;
+}
+[data-baseweb="menu"] li,
+[data-baseweb="menu"] div {
+    color:#111827 !important;
+}
+[data-testid="stSidebar"] button {
+    color:#111827;
 }
 .block-container {padding-top:1.5rem;max-width:1250px;}
 div[data-testid="stMetric"] {background:white;border:1px solid #e5eaf1;padding:16px;border-radius:16px;box-shadow:0 5px 16px rgba(15,23,42,.05);}
 .stButton>button {border-radius:10px;font-weight:700;min-height:44px;}
+[data-testid="stSidebar"] [data-baseweb="input"] > div,
+[data-testid="stSidebar"] [data-baseweb="base-input"] {
+    background:#ffffff !important;
+    border-radius:9px !important;
+}
 footer {visibility:hidden;}
 </style>
 """, unsafe_allow_html=True)
