@@ -8,7 +8,34 @@ st.markdown("""
 <style>
 [data-testid="stAppViewContainer"] {background:#f6f8fc;}
 [data-testid="stSidebar"] {background:#0b1830;}
-[data-testid="stSidebar"] * {color:#f8fafc;}
+/* Sidebar background */
+[data-testid="stSidebar"] {
+    background: #0b1830;
+}
+
+/* Sidebar headings and normal text */
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label {
+    color: #f8fafc !important;
+}
+
+/* Text inside input/select boxes */
+[data-testid="stSidebar"] input {
+    color: #111827 !important;
+}
+
+/* Selected value inside dropdown */
+[data-testid="stSidebar"] [data-baseweb="select"] * {
+    color: #111827 !important;
+}
+
+/* Dropdown options */
+[data-baseweb="popover"] * {
+    color: #111827 !important;
+}
 .block-container {padding-top:1.5rem;max-width:1250px;}
 div[data-testid="stMetric"] {background:white;border:1px solid #e5eaf1;padding:16px;border-radius:16px;box-shadow:0 5px 16px rgba(15,23,42,.05);}
 .stButton>button {border-radius:10px;font-weight:700;min-height:44px;}
