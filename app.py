@@ -4,6 +4,18 @@ import numpy as np
 import joblib
 
 st.set_page_config(page_title="CustomerGuard AI", page_icon="🛡️", layout="wide")
+st.markdown("""
+<style>
+[data-testid="stAppViewContainer"] {background:#f6f8fc;}
+[data-testid="stSidebar"] {background:#0b1830;}
+[data-testid="stSidebar"] * {color:#f8fafc;}
+.block-container {padding-top:1.5rem;max-width:1250px;}
+div[data-testid="stMetric"] {background:white;border:1px solid #e5eaf1;padding:16px;border-radius:16px;box-shadow:0 5px 16px rgba(15,23,42,.05);}
+.stButton>button {border-radius:10px;font-weight:700;min-height:44px;}
+footer {visibility:hidden;}
+</style>
+""", unsafe_allow_html=True)
+
 
 MODEL_PATH = "CustomerGuard_AI_Logistic_Model.joblib"
 DATA_PATH = "telco 2.csv"
@@ -25,9 +37,13 @@ DROP_COLUMNS = [
 ]
 X = df.drop(columns=DROP_COLUMNS + ["Churn Label"], errors="ignore")
 
-st.title("🛡️ CustomerGuard AI")
-st.subheader("Customer Churn Prediction & Retention Intelligence")
-st.caption("Machine-learning decision support for identifying customers who may be at risk of leaving.")
+st.markdown("""
+<div style="background:linear-gradient(120deg,#0b1830,#143b67 58%,#0f6b78);padding:30px 34px;border-radius:22px;color:white;margin-bottom:20px;box-shadow:0 10px 30px rgba(15,23,42,.12)">
+<div style="font-size:.75rem;letter-spacing:.1em;font-weight:700;opacity:.8">MACHINE LEARNING • RETENTION INTELLIGENCE</div>
+<h1 style="margin:8px 0">🛡️ CustomerGuard AI</h1>
+<p style="margin:0;opacity:.88">Identify churn risk early, understand customer signals, and support smarter retention decisions.</p>
+</div>
+""", unsafe_allow_html=True)
 
 with st.sidebar:
     st.header("Customer Profile")
@@ -139,3 +155,6 @@ The project prioritises recall because failing to identify a genuine churner can
 ### Responsible use
 CustomerGuard AI is a portfolio decision-support prototype. Predictive associations do not establish causation, and automated outputs should not replace human review.
 """)
+
+st.divider()
+st.caption("CustomerGuard AI · Portfolio project by Stephen Samson · Data Science & Artificial Intelligence")
